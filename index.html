@@ -21,6 +21,9 @@
 
 	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap" rel="stylesheet">
 	
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
@@ -52,14 +55,14 @@
 	<div class="fh5co-loader"></div>
 	
 	<div id="page">
+		
 	<nav class="fh5co-nav" role="navigation">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-2">
-					<div id="fh5co-logo"><a href="index.html">XV Años</a></div>
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<div id="fh5co-logo"><a >MIS XV AÑOS</a></div>
 				</div>
-			</div>
-			
+			</div>			
 		</div>
 	</nav>
 
@@ -83,11 +86,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<h2>Hola!</h2>
 					<h3>17 de febrero de 2024</h3>
-					<p>Te invitamos a celebrar nuestra fiesta de XV Años.</p>	
-					<p>Queremos compartir este momento significativo contigo y nos encantaría contar con tu presencia. Será una velada llena de
-					alegría, risas y momentos inolvidables.</p>
+					<p>Hay momentos inolvidables que se atesoran en el corazón y este día no será la excepción por eso quiero que me acompañes a celebrar Mis 15 años. </p>
 				</div>
 				
 			</div>
@@ -186,28 +186,41 @@
 	<!-- Magnific Popup -->
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/magnific-popup-options.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/es.min.js"></script>
 
-	<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
+	// <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
 	<script src="js/simplyCountdown.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
 	<script>
-    var targetDate = new Date('2024-02-17');
+    var targetDate = moment('2024-02-17');
 
+		// Establecer idioma en español
+		moment.locale('es');
+
+		// default example
 		simplyCountdown('.simply-countdown-one', {
-			year: targetDate.getFullYear(),
-			month: targetDate.getMonth() + 1,
-			day: targetDate.getDate()
+			year: targetDate.year(),
+			month: targetDate.month() + 1,
+			day: targetDate.date(),
+			hours: targetDate.hours(),
+			minutes: targetDate.minutes(),
+			seconds: targetDate.seconds()
 		});
 
-    //jQuery example
-    $('#simply-countdown-losange').simplyCountdown({
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate(),
-        enableUtc: false
-    });
+		//jQuery example
+		$('#simply-countdown-losange').simplyCountdown({
+			year: targetDate.year(),
+			month: targetDate.month() + 1,
+			day: targetDate.date(),
+			hours: targetDate.hours(),
+			minutes: targetDate.minutes(),
+			seconds: targetDate.seconds(),
+			enableUtc: false
+		});
+
 </script>
 
 	</body>
